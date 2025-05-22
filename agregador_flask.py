@@ -14,6 +14,18 @@ FEEDS_POR_CATEGORIA = {
         "https://www.theverge.com/rss/index.xml",
         "https://tecnoblog.net/feed/",
         "https://canaltech.com.br/rss/",
+        "https://gizmodo.uol.com.br/feed/",
+        "https://www.engadget.com/rss.xml",
+        "https://www.cnet.com/rss/news/",
+        "https://www.bbc.co.uk/news/technology/rss.xml",
+        "https://www.reuters.com/news/technology",
+        "https://www.bbc.co.uk/news/technology/rss.xml",
+        "https://www.wired.com/feed/category/tech/latest/rss",
+        "https://www.techcrunch.com/feed/",
+        "https://www.zdnet.com/news/rss.xml",
+        "https://ycombinator.com/rss",
+        "https://www.theguardian.com/technology/rss",
+        "https://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/section/technology/rss.xml",
     ],
     "quadrinhos": [
         "http://feeds.feedburner.com/comicsbeat", # The Beat
@@ -22,6 +34,12 @@ FEEDS_POR_CATEGORIA = {
     "economia": [
         "http://feeds.reuters.com/reuters/businessNews", # Reuters Business
         "https://www.valor.com.br/rss",
+        "https://www.infomoney.com.br/rss",
+        "https://www.cnnbrasil.com.br/feed/",
+        "https://www.bbc.co.uk/news/business/rss.xml",
+        "https://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/section/business/rss.xml",
+        "https://www.wsj.com/xml/rss/3_7085.xml", # Wall Street Journal
+        
     ]
 }
 CATEGORIAS_DISPONIVEIS = list(FEEDS_POR_CATEGORIA.keys())
@@ -29,7 +47,7 @@ CATEGORIA_PADRAO = "tecnologia"
 
 HORAS_RECENTES_FEED = 48
 MAX_NOTICIAS_SALVAS_PARA_EXIBIR = 10
-MAX_FEEDS_RECENTES_PARA_EXIBIR = 10
+MAX_FEEDS_RECENTES_PARA_EXIBIR = 30
 DATA_DIR = 'data'
 SALVAS_JSON_PATH = os.path.join(DATA_DIR, 'noticias_salvas.json')
 FEEDS_RECENTES_JSON_PATH = os.path.join(DATA_DIR, 'feeds_recentes.json')

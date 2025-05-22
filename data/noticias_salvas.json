@@ -34,7 +34,7 @@
         "publicado_em_str": "22/05/2025 00:11",
         "fonte": "Canaltech",
         "categoria": "tecnologia",
-        "relevancia": 0
+        "relevancia": 1
     },
     {
         "titulo": "Valiant Comics' August 2025 Solicits, Bloodshot &#038; Tales Of Shadowman",
@@ -47,13 +47,13 @@
         "relevancia": 0
     },
     {
-        "titulo": "Filme de Street Fighter pode ter Jason Momoa e Noah Centineo no elenco",
-        "link": "https://canaltech.com.br/cinema/filme-de-street-fighter-pode-ter-jason-momoa-e-noah-centineo-no-elenco/",
-        "resumo": "O filme de Street Fighter continua sendo produzido e novos nomes estão em discussão para interpretar os famosos lutadores da franquia da Capcom. Entre os principais atores que estão negociando um papel estão Jason Momoa (Aquaman), Andrew Koji (Trem-Bala), Noah Centineo (Para Todos os Garotos que Já...",
-        "publicado_em_ts": 1747871916.0,
-        "publicado_em_str": "21/05/2025 23:58",
-        "fonte": "Canaltech",
+        "titulo": "Spotify comemora os primeiros resultados após derrota na Justiça",
+        "link": "https://tecnoblog.net/noticias/spotify-cresce-no-ios-apos-justica-obrigar-apple-a-mudar-regras/",
+        "resumo": "Empresa aponta que nova página com preços e link para checkout no app para iPhone impulsionou conversões, enquanto taxa no Android permaneceu estável.\nSpotify comemora os primeiros resultados após derrota na Justiça",
+        "publicado_em_ts": 1747933209.0,
+        "publicado_em_str": "22/05/2025 17:00",
+        "fonte": "Tecnoblog",
         "categoria": "tecnologia",
-        "relevancia": 0
+        "relevancia": 1
     }
 ]
