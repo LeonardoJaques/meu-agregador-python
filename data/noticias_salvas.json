@@ -55,5 +55,25 @@
         "fonte": "Tecnoblog",
         "categoria": "tecnologia",
         "relevancia": 1
+    },
+    {
+        "titulo": "OpenAI Says It Will Build Massive New Data Center in the U.A.E.",
+        "link": "https://www.nytimes.com/2025/05/22/technology/openai-uae-data-centers.html",
+        "resumo": "As part of a new partnership, G42, an Emirati A.I. firm, will also help fund OpenAI’s new computer facilities in the United States.",
+        "publicado_em_ts": 1747936329.0,
+        "publicado_em_str": "22/05/2025 17:52",
+        "fonte": "NYT > Technology",
+        "categoria": "tecnologia",
+        "relevancia": 0
+    },
+    {
+        "titulo": "Google anuncia recurso para suspender atualizações de apps com bugs",
+        "link": "https://tecnoblog.net/noticias/google-anuncia-recurso-para-suspender-atualizacoes-de-apps-com-bugs/",
+        "resumo": "Devs ganharão ferramenta na Play Store para suspender o envio de updates. Recurso tentará evitar grandes problemas com atualizações bugadas\nGoogle anuncia recurso para suspender atualizações de apps com bugs",
+        "publicado_em_ts": 1747935507.0,
+        "publicado_em_str": "22/05/2025 17:38",
+        "fonte": "Tecnoblog",
+        "categoria": "tecnologia",
+        "relevancia": 0
     }
 ]
