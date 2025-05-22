@@ -7,24 +7,23 @@ import json
 import os
 import copy
 
-# --- Configurações ---
 FEEDS_POR_CATEGORIA = {
-    "tecnologia": [ # Mantendo a existente
+    "tecnologia": [
         "http://feeds.feedburner.com/TechCrunch/",
         "https://www.theverge.com/rss/index.xml",
         "https://tecnoblog.net/feed/",
     ],
-    "ia": [ # Nova categoria IA
-        "https://news.mit.edu/topic/artificial-intelligence2/feed", # MIT News - AI
-        "https://blog.research.google/feeds/posts/default/-/artificial%20intelligence", # Google Research - AI
-        "https://aws.amazon.com/blogs/machine-learning/feed/", # AWS ML Blog
-        "https://www.technologyreview.com/c/artificial-intelligence/feed/" # MIT Tech Review - AI
+    "ia": [
+        "https://news.mit.edu/topic/artificial-intelligence2/feed",
+        "https://blog.research.google/feeds/posts/default/-/artificial%20intelligence",
+        "https://aws.amazon.com/blogs/machine-learning/feed/",
+        "https://www.technologyreview.com/c/artificial-intelligence/feed/"
     ],
-    "java": [ # Nova categoria Java
-        "https://www.baeldung.com/category/java/feed", # Baeldung Java
-        "https://blogs.oracle.com/java/rss", # Oracle Java Blog
-        "https://feed.infoq.com/java/news/", # InfoQ Java
-        "https://foojay.io/today/feed/" # Friends of OpenJDK
+    "java": [
+        "https://www.baeldung.com/category/java/feed",
+        "https://blogs.oracle.com/java/rss",
+        "https://feed.infoq.com/java/news/",
+        "https://foojay.io/today/feed/"
     ],
     "quadrinhos": [
         "http://feeds.feedburner.com/comicsbeat", 
@@ -35,16 +34,15 @@ FEEDS_POR_CATEGORIA = {
         "https://www.valor.com.br/rss",
     ]
 }
-CATEGORIAS_DISPONIVEIS = list(FEEDS_POR_CATEGORIA.keys()) # Atualizará automaticamente
-CATEGORIA_PADRAO = "tecnologia" # Você pode mudar se quiser
+CATEGORIAS_DISPONIVEIS = list(FEEDS_POR_CATEGORIA.keys())
+CATEGORIA_PADRAO = "tecnologia"
 
-# Palavras-chave para simular "tendências" por categoria
 PALAVRAS_CHAVE_TENDENCIA_POR_CATEGORIA = {
     "tecnologia": ["lançamento", "nova versão", "inovação", "vazamento", "review"],
     "ia": ["llm", "gpt", "generativa", "deep learning", "machine learning", "openai", "modelo", "pesquisa"],
     "java": ["jdk", "spring boot", "jvm", "framework", "microservices", "release", "jakarta ee", "vulnerabilidade"],
-    "quadrinhos": ["adaptação", "trailer", "crítica", "anúncio", "evento", "hq", "mangá"],
-    "economia": ["inflação", "juros", "selic", "mercado", "bolsa", "investimento", "crescimento"]
+    "quadrinhos": ["adaptação", "trailer", "crítica", "anúncio", "revelado", "evento", "hq", "mangá"],
+    "economia": ["inflação", "juros", "selic", "mercado", "bolsa", "investimento", "crise", "crescimento"]
 }
 
 HORAS_RECENTES_FEED = 48
@@ -54,29 +52,32 @@ DATA_DIR = 'data'
 SALVAS_JSON_PATH = os.path.join(DATA_DIR, 'noticias_salvas.json')
 FEEDS_RECENTES_JSON_PATH = os.path.join(DATA_DIR, 'feeds_recentes.json')
 
-# O RESTANTE DO CÓDIGO PYTHON (funções de utilidade, buscar_novidades_dos_feeds,
-# ordenar_noticias_salvas, rotas Flask, etc.) PERMANECE EXATAMENTE O MESMO
-# da versão anterior, pois ele já foi projetado para iterar sobre
-# FEEDS_POR_CATEGORIA e CATEGORIAS_DISPONIVEIS dinamicamente.
-
-# --- Funções de utilidade para JSON, Conversão (sem alteração) ---
 def garantir_pasta_data():
-    if not os.path.exists(DATA_DIR): os.makedirs(DATA_DIR); print(f"Pasta '{DATA_DIR}' criada.")
+    if not os.path.exists(DATA_DIR):
+        os.makedirs(DATA_DIR)
+
 def carregar_json(caminho_arquivo):
     garantir_pasta_data()
     try:
-        with open(caminho_arquivo, 'r', encoding='utf-8') as f: return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError): return []
+        with open(caminho_arquivo, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
 def salvar_json(caminho_arquivo, dados):
     garantir_pasta_data()
-    with open(caminho_arquivo, 'w', encoding='utf-8') as f: json.dump(dados, f, indent=4, ensure_ascii=False)
-def converter_para_datetime_utc(struct_time):
-    try: return datetime.fromtimestamp(time.mktime(struct_time), timezone.utc)
-    except Exception: return datetime(struct_time[0], struct_time[1], struct_time[2], struct_time[3], struct_time[4], struct_time[5], tzinfo=timezone.utc)
+    with open(caminho_arquivo, 'w', encoding='utf-8') as f:
+        json.dump(dados, f, indent=4, ensure_ascii=False)
 
-# --- Lógica Principal com Categorias ---
+def converter_para_datetime_utc(struct_time):
+    try:
+        return datetime.fromtimestamp(time.mktime(struct_time), timezone.utc)
+    except Exception:
+        return datetime(struct_time[0], struct_time[1], struct_time[2],
+                        struct_time[3], struct_time[4], struct_time[5],
+                        tzinfo=timezone.utc)
+
 def buscar_novidades_dos_feeds():
-    print("Buscando novidades dos feeds RSS por categoria...")
     noticias_salvas = carregar_json(SALVAS_JSON_PATH)
     links_salvos = {noticia['link'] for noticia in noticias_salvas}
     
@@ -87,7 +88,6 @@ def buscar_novidades_dos_feeds():
     palavras_chave_tendencia_globais = PALAVRAS_CHAVE_TENDENCIA_POR_CATEGORIA
 
     for categoria, urls_feeds in FEEDS_POR_CATEGORIA.items():
-        print(f"Processando categoria: {categoria}")
         palavras_chave_categoria = [palavra.lower() for palavra in palavras_chave_tendencia_globais.get(categoria, [])]
 
         for url_feed in urls_feeds:
@@ -103,7 +103,8 @@ def buscar_novidades_dos_feeds():
                     continue
 
                 data_publicacao_struct = entry.published_parsed or entry.updated_parsed
-                if not data_publicacao_struct: continue
+                if not data_publicacao_struct:
+                    continue
 
                 data_publicacao_dt = converter_para_datetime_utc(data_publicacao_struct)
                 if data_publicacao_dt >= limite_tempo_feed:
@@ -130,15 +131,13 @@ def buscar_novidades_dos_feeds():
                     if not any(n['link'] == link_noticia for n in novidades_coletadas_geral):
                         novidades_coletadas_geral.append(noticia_coletada)
     
-    salvar_json(FEEDS_RECENTES_JSON_PATH, novidades_coletadas_geral) # Salva todas, a ordenação por tendência será na rota
-    print(f"{len(novidades_coletadas_geral)} notícias coletadas de todas categorias e salvas em feeds_recentes.json")
+    salvar_json(FEEDS_RECENTES_JSON_PATH, novidades_coletadas_geral)
 
 def ordenar_noticias_salvas(noticias):
     return sorted(noticias, key=lambda x: (x.get('relevancia', 0), x.get('publicado_em_ts', 0)), reverse=True)
 
-# --- Configuração do Flask e Rotas ---
 app = Flask(__name__)
-app.secret_key = 'mudar_esta_chave_para_algo_seguro_em_producao_final_final'
+app.secret_key = 'mudar_esta_chave_para_algo_seguro_em_producao_final_final_mesmo'
 
 @app.route('/')
 def pagina_inicial():
@@ -175,17 +174,20 @@ def rota_refresh_feeds():
 @app.route('/salvar_noticia/<path:noticia_link>')
 def rota_salvar_noticia(noticia_link):
     feeds_recentes = carregar_json(FEEDS_RECENTES_JSON_PATH)
-    noticia_para_salvar_original = None; categoria_da_noticia_salva = CATEGORIA_PADRAO
+    noticia_para_salvar_original = None
+    categoria_da_noticia_salva = CATEGORIA_PADRAO
     for noticia_feed in feeds_recentes:
         if noticia_feed['link'] == noticia_link:
             noticia_para_salvar_original = noticia_feed
-            categoria_da_noticia_salva = noticia_feed.get('categoria', CATEGORIA_PADRAO); break
+            categoria_da_noticia_salva = noticia_feed.get('categoria', CATEGORIA_PADRAO)
+            break
     if noticia_para_salvar_original:
         noticia_para_salvar = copy.deepcopy(noticia_para_salvar_original)
         noticias_salvas = carregar_json(SALVAS_JSON_PATH)
         if not any(n['link'] == noticia_para_salvar['link'] for n in noticias_salvas):
             noticia_para_salvar['relevancia'] = 0
-            if 'fator_tendencia' in noticia_para_salvar: del noticia_para_salvar['fator_tendencia'] 
+            if 'fator_tendencia' in noticia_para_salvar:
+                del noticia_para_salvar['fator_tendencia'] 
             noticias_salvas.append(noticia_para_salvar)
             salvar_json(SALVAS_JSON_PATH, noticias_salvas)
             feeds_recentes_atualizado = [n for n in feeds_recentes if n['link'] != noticia_link]
@@ -194,32 +196,43 @@ def rota_salvar_noticia(noticia_link):
 
 def _alterar_relevancia_noticia_salva(noticia_link, nova_relevancia_abs=None, delta_relevancia=None):
     noticias_salvas = carregar_json(SALVAS_JSON_PATH)
-    modificada = False; relevancia_final = 0; categoria_noticia = CATEGORIA_PADRAO
+    modificada = False
+    relevancia_final = 0
+    categoria_noticia = CATEGORIA_PADRAO
     for noticia in noticias_salvas:
         if noticia['link'] == noticia_link:
             categoria_noticia = noticia.get('categoria', CATEGORIA_PADRAO)
-            if nova_relevancia_abs is not None: noticia['relevancia'] = nova_relevancia_abs
-            elif delta_relevancia is not None: noticia['relevancia'] = noticia.get('relevancia', 0) + delta_relevancia
-            noticia['relevancia'] = max(0, noticia['relevancia']); relevancia_final = noticia['relevancia']; modificada = True; break
-    if modificada: salvar_json(SALVAS_JSON_PATH, noticias_salvas)
+            if nova_relevancia_abs is not None:
+                noticia['relevancia'] = nova_relevancia_abs
+            elif delta_relevancia is not None:
+                noticia['relevancia'] = noticia.get('relevancia', 0) + delta_relevancia
+            noticia['relevancia'] = max(0, noticia['relevancia'])
+            relevancia_final = noticia['relevancia']
+            modificada = True
+            break
+    if modificada:
+        salvar_json(SALVAS_JSON_PATH, noticias_salvas)
     return modificada, relevancia_final, categoria_noticia
 
 @app.route('/rank_up_salva/<path:noticia_link>', methods=['POST'])
 def rota_aumentar_relevancia_salva(noticia_link):
     modificada, nova_relevancia, _ = _alterar_relevancia_noticia_salva(noticia_link, delta_relevancia=1)
-    if modificada: return jsonify(success=True, link=noticia_link, nova_relevancia=nova_relevancia)
+    if modificada:
+        return jsonify(success=True, link=noticia_link, nova_relevancia=nova_relevancia)
     return jsonify(success=False, link=noticia_link, message="Notícia não encontrada ou erro.")
 
 @app.route('/rank_down_salva/<path:noticia_link>', methods=['POST'])
 def rota_diminuir_relevancia_salva(noticia_link):
     modificada, nova_relevancia, _ = _alterar_relevancia_noticia_salva(noticia_link, delta_relevancia=-1)
-    if modificada: return jsonify(success=True, link=noticia_link, nova_relevancia=nova_relevancia)
+    if modificada:
+        return jsonify(success=True, link=noticia_link, nova_relevancia=nova_relevancia)
     return jsonify(success=False, link=noticia_link, message="Notícia não encontrada ou erro.")
 
 @app.route('/reset_relevance_salva/<path:noticia_link>', methods=['POST'])
 def rota_resetar_relevancia_salva(noticia_link):
     modificada, nova_relevancia, _ = _alterar_relevancia_noticia_salva(noticia_link, nova_relevancia_abs=0)
-    if modificada: return jsonify(success=True, link=noticia_link, nova_relevancia=nova_relevancia)
+    if modificada:
+        return jsonify(success=True, link=noticia_link, nova_relevancia=nova_relevancia)
     return jsonify(success=False, link=noticia_link, message="Notícia não encontrada ou erro.")
 
 @app.route('/delete_salva/<path:noticia_link>')
@@ -227,14 +240,15 @@ def rota_excluir_noticia_salva(noticia_link):
     noticias_salvas = carregar_json(SALVAS_JSON_PATH)
     categoria_noticia_excluida = CATEGORIA_PADRAO
     for n in noticias_salvas:
-        if n['link'] == noticia_link: categoria_noticia_excluida = n.get('categoria', CATEGORIA_PADRAO); break
+        if n['link'] == noticia_link:
+            categoria_noticia_excluida = n.get('categoria', CATEGORIA_PADRAO)
+            break
     noticias_filtradas = [n for n in noticias_salvas if n['link'] != noticia_link]
-    if len(noticias_filtradas) < len(noticias_salvas): salvar_json(SALVAS_JSON_PATH, noticias_filtradas)
+    if len(noticias_filtradas) < len(noticias_salvas):
+        salvar_json(SALVAS_JSON_PATH, noticias_filtradas)
     return redirect(url_for('pagina_inicial', categoria=categoria_noticia_excluida))
-
 
 if __name__ == '__main__':
     garantir_pasta_data()
-    print("Limpando feeds_recentes.json na inicialização...")
     salvar_json(FEEDS_RECENTES_JSON_PATH, []) 
     app.run(host='0.0.0.0', port=5000, debug=True)

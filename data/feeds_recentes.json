@@ -100,16 +100,6 @@
         "fator_tendencia": 0
     },
     {
-        "titulo": "Google libera IA de graça para universitários do Brasil",
-        "link": "https://tecnoblog.net/noticias/google-libera-ia-de-graca-para-universitarios-do-brasil/",
-        "resumo": "Estudantes com e-mail acadêmico terão acesso gratuito por 15 meses ao plano mais completo de inteligência artificial do Google\nGoogle libera IA de graça para universitários do Brasil",
-        "publicado_em_ts": 1747937442.0,
-        "publicado_em_str": "22/05/2025 18:10",
-        "fonte": "Tecnoblog",
-        "categoria": "tecnologia",
-        "fator_tendencia": 0
-    },
-    {
         "titulo": "O que é o Wear OS? Conheça as vantagens do sistema operacional do Google para relógios",
         "link": "https://tecnoblog.net/responde/o-que-e-o-wear-os-conheca-as-vantagens-do-sistema-operacional-do-google-para-relogios/",
         "resumo": "O Wear OS, sistema operacional do Google, se destaca pela ampla integração com o ecossistema da marca e a extensa biblioteca de aplicativos disponível para os usuários\nO que é o Wear OS? Conheça as vantagens do sistema operacional do Google para relógios",
@@ -540,36 +530,6 @@
         "fator_tendencia": 0
     },
     {
-        "titulo": "A barra de tarefas do Windows sumiu? Veja 7 maneiras de recuperar",
-        "link": "https://tecnoblog.net/responde/a-barra-de-tarefas-do-windows-sumiu-ou-travou-saiba-recuperar/",
-        "resumo": "Erros no sistema, travamentos do explorer ou bugs de atualização são algumas das causas para o desaparecimento da barra de tarefas do Windows\nA barra de tarefas do Windows sumiu? Veja 7 maneiras de recuperar",
-        "publicado_em_ts": 1747757832.0,
-        "publicado_em_str": "20/05/2025 16:17",
-        "fonte": "Tecnoblog",
-        "categoria": "tecnologia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "Empresa que substituiu pessoas por IA volta atrás e contrata humanos",
-        "link": "https://tecnoblog.net/noticias/empresa-que-substituiu-pessoas-por-ia-volta-atras-e-contrata-humanos/",
-        "resumo": "CEO Sebastian Siemiatkowski admite queda na qualidade do serviço com IA e prioriza atendimento humano disponível. A fintech sueca planeja nova contratação, reduzindo quadro geral.\nEmpresa que substituiu pessoas por IA volta atrás e contrata humanos",
-        "publicado_em_ts": 1747757420.0,
-        "publicado_em_str": "20/05/2025 16:10",
-        "fonte": "Tecnoblog",
-        "categoria": "tecnologia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "Microsoft lança ferramenta que transforma sites em interfaces com IA",
-        "link": "https://tecnoblog.net/noticias/microsoft-lanca-ferramenta-que-transforma-sites-em-interfaces-com-ia/",
-        "resumo": "Projeto NLWeb permite que páginas da web ganhem interfaces em linguagem natural, facilitando a criação de experiências com inteligência artificial.\nMicrosoft lança ferramenta que transforma sites em interfaces com IA",
-        "publicado_em_ts": 1747757165.0,
-        "publicado_em_str": "20/05/2025 16:06",
-        "fonte": "Tecnoblog",
-        "categoria": "tecnologia",
-        "fator_tendencia": 0
-    },
-    {
         "titulo": "Boosting team productivity with Amazon Q Business Microsoft 365 integrations for Microsoft 365 Outlook and Word",
         "link": "https://aws.amazon.com/blogs/machine-learning/boosting-team-productivity-with-amazon-q-business-microsoft-365-integrations-for-microsoft-365-outlook-and-word/",
         "resumo": "Amazon Q Business integration with Microsoft 365 applications offers powerful AI assistance directly within the tools that your team already uses daily. In this post, we explore how these integrations for Outlook and Word can transform your workflow.",
@@ -620,23 +580,23 @@
         "fator_tendencia": 0
     },
     {
-        "titulo": "Understanding BSON: A Beginner’s Guide to MongoDB’s Data Format",
-        "link": "https://foojay.io/today/understanding-bson-a-beginners-guide-to-mongodbs-data-format/",
-        "resumo": "Table of Contents What is BSON?Why not just JSON?BSON vs. JSONCommon BSON data types (and their Java equivalents)BSON and MongoDB internalsSetup and project structureBSON data types and document creationNested fields and arraysWhy use nested structures?Raw BSON manipulationQuerying with BSONAggregat...",
-        "publicado_em_ts": 1747911906.0,
-        "publicado_em_str": "22/05/2025 11:05",
-        "fonte": "Foojay Today | foojay blogs on OpenJDK and Java",
-        "categoria": "java",
+        "titulo": "Marvel To Follow Doctor Strange Of Asgard #5 With Doctor Strange #450",
+        "link": "https://bleedingcool.com/comics/marvel-to-follow-doctor-strange-of-asgard-5-with-doctor-strange-450/",
+        "resumo": "Marvel Comics To Follow Doctor Strange Of Asgard #5 With Doctor Strange #450",
+        "publicado_em_ts": 1747941787.0,
+        "publicado_em_str": "22/05/2025 19:23",
+        "fonte": "Comics",
+        "categoria": "quadrinhos",
         "fator_tendencia": 0
     },
     {
-        "titulo": "How to send prompts in bulk with Spring AI and Java Virtual Threads",
-        "link": "https://foojay.io/today/how-to-send-prompts-in-bulk-with-spring-ai-and-java-virtual-threads/",
-        "resumo": "Table of Contents Here’s the flow:Virtual Threads for Massive ParallelismSpring AI Prompt CallProcessing in BatchesHandling Errors GracefullyProcess Results in BulkFull ImplementationStay curious! TL;DR: You&#8217;re building an AI-powered app that needs to send lots of prompts to OpenAI. Instead of...",
-        "publicado_em_ts": 1747829925.0,
-        "publicado_em_str": "21/05/2025 12:18",
-        "fonte": "Foojay Today | foojay blogs on OpenJDK and Java",
-        "categoria": "java",
+        "titulo": "Hermes Press: Diamond Is \"Effectively Halting Distribution\" Of Comics",
+        "link": "https://bleedingcool.com/comics/hermes-press-diamond-is-effectively-halting-distribution-of-comics/",
+        "resumo": "Hermes Press reports that Diamond Comic Distributors is \"effectively halting distribution\" of comic books",
+        "publicado_em_ts": 1747940228.0,
+        "publicado_em_str": "22/05/2025 18:57",
+        "fonte": "Comics",
+        "categoria": "quadrinhos",
         "fator_tendencia": 0
     },
     {
@@ -910,23 +870,73 @@
         "fator_tendencia": 0
     },
     {
-        "titulo": "DC Runs \"Golden Biscuit\" Prize To Attend World Premiere Of Superman",
-        "link": "https://bleedingcool.com/comics/dc-runs-golden-biscuit-prize-to-attend-world-premiere-of-superman/",
-        "resumo": "DC Comics runs a \"Krypto's Golden Biscuit\" prize in issues of Superman comics to attend the World Premiere of Superman in Los Angeles",
-        "publicado_em_ts": 1747777629.0,
-        "publicado_em_str": "20/05/2025 21:47",
-        "fonte": "Comics",
-        "categoria": "quadrinhos",
+        "titulo": "Atendimento presencial a segurados do INSS em casos de fraudes será exclusivo nos Correios",
+        "link": "https://valor.globo.com/brasil/noticia/2025/05/22/atendimento-presencial-a-segurados-do-inss-em-casos-de-fraudes-sera-exclusivo-nos-correios.ghtml",
+        "resumo": "Presidente do órgão, Gilberto Waller alerta para g...",
+        "publicado_em_ts": 1747941240.0,
+        "publicado_em_str": "22/05/2025 19:14",
+        "fonte": "valor",
+        "categoria": "economia",
         "fator_tendencia": 0
     },
     {
-        "titulo": "Thor Gets a New Identity in Thor #1 by Al Ewing and Pasqual Ferry",
-        "link": "https://bleedingcool.com/comics/thor-gets-a-new-identity-in-thor-1-by-al-ewing-and-pasqual-ferry/",
-        "resumo": "Thor gets a new identity, or something, in Thor #1 by Al Ewing and Pasqual Ferry, from Marvel Comics in August",
-        "publicado_em_ts": 1747776249.0,
-        "publicado_em_str": "20/05/2025 21:24",
-        "fonte": "Comics",
-        "categoria": "quadrinhos",
+        "titulo": "Mercados melhoram após diretor do Fed sinalizar redução de juros no 2º semestre, apesar do projeto de corte de impostos de Trump",
+        "link": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
+        "resumo": "Dólar e juros globais passam a cair; Ibovespa oper...",
+        "publicado_em_ts": 1747941124.0,
+        "publicado_em_str": "22/05/2025 19:12",
+        "fonte": "valor",
+        "categoria": "economia",
+        "fator_tendencia": 1
+    },
+    {
+        "titulo": "PMI composto dos EUA sobe a 52,1 em maio, aponta dado preliminar da S&P Global",
+        "link": "https://valor.globo.com/mundo/noticia/2025/05/22/pmi-composto-dos-eua-sobe-a-521-em-maio-aponta-dado-preliminar-da-sandp-global.ghtml",
+        "resumo": "Economista-chefe de negócios da S&amp;P, Chris William...",
+        "publicado_em_ts": 1747940892.0,
+        "publicado_em_str": "22/05/2025 19:08",
+        "fonte": "valor",
+        "categoria": "economia",
+        "fator_tendencia": 0
+    },
+    {
+        "titulo": "Bolsas da Europa caem com dados mais fracos e risco fiscal dos EUA no radar",
+        "link": "https://valor.globo.com/financas/noticia/2025/05/22/bolsas-da-europa-caem-com-dados-mais-fracos-e-risco-fiscal-dos-eua-no-radar.ghtml",
+        "resumo": "O índice Stoxx 600 anotou queda de 0,72%, o FTSE 1...",
+        "publicado_em_ts": 1747940664.0,
+        "publicado_em_str": "22/05/2025 19:04",
+        "fonte": "valor",
+        "categoria": "economia",
+        "fator_tendencia": 1
+    },
+    {
+        "titulo": "Pesquisa do Sistema CNC-Sesc-Senac revela avanços em inovação nas empresas",
+        "link": "https://valor.globo.com/conteudo-de-marca/cnc/noticia/2025/05/22/pesquisa-do-sistema-cnc-sesc-senac-revela-avancos-em-inovacao-nas-empresas.ghtml",
+        "resumo": "Ações da Confederação Nacional do Comércio de Bens...",
+        "publicado_em_ts": 1747940441.0,
+        "publicado_em_str": "22/05/2025 19:00",
+        "fonte": "valor",
+        "categoria": "economia",
+        "fator_tendencia": 0
+    },
+    {
+        "titulo": "Exclusivo: Crise se agrava e Unigel negocia nova capitalização, dizem fontes",
+        "link": "https://valor.globo.com/empresas/noticia/2025/05/22/crise-se-agrava-e-unigel-negocia-nova-capitalizacao-dizem-fontes.ghtml",
+        "resumo": "A depender do tamanho e do formato da nova capital...",
+        "publicado_em_ts": 1747940037.0,
+        "publicado_em_str": "22/05/2025 18:53",
+        "fonte": "valor",
+        "categoria": "economia",
+        "fator_tendencia": 0
+    },
+    {
+        "titulo": "BYD bate Tesla na Europa pela 1ª vez com alta de 169% nas vendas",
+        "link": "https://valor.globo.com/empresas/noticia/2025/05/22/byd-vende-mais-veculos-que-a-tesla-na-europa-pela-primeira-vez-em-abril.ghtml",
+        "resumo": "A Tesla registrou uma queda de 49% em relação ao a...",
+        "publicado_em_ts": 1747939964.0,
+        "publicado_em_str": "22/05/2025 18:52",
+        "fonte": "valor",
+        "categoria": "economia",
         "fator_tendencia": 0
     },
     {
@@ -942,7 +952,7 @@
     {
         "titulo": "Líder do PT diz que governistas vão lutar para alterar novo marco do licenciamento ambiental na Câmara",
         "link": "https://valor.globo.com/politica/noticia/2025/05/22/lider-do-pt-diz-que-governistas-vao-lutar-para-alterar-novo-marco-do-licenciamento-ambiental-na-camara.ghtml",
-        "resumo": "Em reunião de líderes, o presidente da Casa, Hugo...",
+        "resumo": "Projeto aprovado ontem pelo Senado flexibiliza as...",
         "publicado_em_ts": 1747939520.0,
         "publicado_em_str": "22/05/2025 18:45",
         "fonte": "valor",
@@ -1008,16 +1018,6 @@
         "fonte": "valor",
         "categoria": "economia",
         "fator_tendencia": 0
-    },
-    {
-        "titulo": "Mercados melhoram após diretor do Fed sinalizar redução de juros no 2º semestre, apesar do projeto de corte de impostos de Trump",
-        "link": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
-        "resumo": "Dólar e juros globais passam a cair; Ibovespa vira...",
-        "publicado_em_ts": 1747937566.0,
-        "publicado_em_str": "22/05/2025 18:12",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 1
     },
     {
         "titulo": "BNDES assina liberação de R$ 11,2 bilhões do Fundo Clima",
@@ -1440,11 +1440,31 @@
         "fator_tendencia": 0
     },
     {
+        "titulo": "Empresas de TI e o futuro da segurança digital: proteção sob demanda para PMEs",
+        "link": "https://valor.globo.com/patrocinado/pressworks/noticia/2025/05/22/empresas-de-ti-e-o-futuro-da-seguranca-digital-protecao-sob-demanda-para-pmes.ghtml",
+        "resumo": "Este artigo explora como a TI Sec, uma das princip...",
+        "publicado_em_ts": 1747929220.0,
+        "publicado_em_str": "22/05/2025 15:53",
+        "fonte": "valor",
+        "categoria": "economia",
+        "fator_tendencia": 0
+    },
+    {
         "titulo": "Opep+ discute novo aumento de produção para julho",
         "link": "https://valor.globo.com/mundo/noticia/2025/05/22/opep-discute-novo-aumento-de-produo-para-julho.ghtml",
         "resumo": "Proposta é aumentar a produção em 411 mil barris p...",
         "publicado_em_ts": 1747929014.0,
         "publicado_em_str": "22/05/2025 15:50",
+        "fonte": "valor",
+        "categoria": "economia",
+        "fator_tendencia": 0
+    },
+    {
+        "titulo": "Dr. José Maciel Filho é o novo diretor médico da Dr. Ocupacional",
+        "link": "https://valor.globo.com/patrocinado/pressworks/noticia/2025/05/22/dr-jose-maciel-filho-e-o-novo-diretor-medico-da-dr-ocupacional.ghtml",
+        "resumo": "Depois de 17 anos atuando em empresas como Danone,...",
+        "publicado_em_ts": 1747928888.0,
+        "publicado_em_str": "22/05/2025 15:48",
         "fonte": "valor",
         "categoria": "economia",
         "fator_tendencia": 0
@@ -1458,6 +1478,16 @@
         "fonte": "valor",
         "categoria": "economia",
         "fator_tendencia": 0
+    },
+    {
+        "titulo": "ACI Academy lança formação on-line em crédito internacional",
+        "link": "https://valor.globo.com/patrocinado/dino/noticia/2025/05/22/aci-academy-lanca-formacao-on-line-em-credito-internacional.ghtml",
+        "resumo": "Fórum Técnico ACI é focado no mercado de crédito i...",
+        "publicado_em_ts": 1747928591.0,
+        "publicado_em_str": "22/05/2025 15:43",
+        "fonte": "valor",
+        "categoria": "economia",
+        "fator_tendencia": 1
     },
     {
         "titulo": "EasyJet diz que renovação da frota está atrasada devido à demora na entrega da Airbus",
@@ -1590,9 +1620,9 @@
         "fator_tendencia": 0
     },
     {
-        "titulo": "Dólar à vista inicia sessão em alta com dívida pública americana no radar",
+        "titulo": "Dólar à vista recua e real tem um dos melhores desempenhos do dia",
         "link": "https://valor.globo.com/financas/noticia/2025/05/22/dolar-a-vista-inicia-sessao-em-alta-com-divida-publica-americana-no-radar.ghtml",
-        "resumo": "Moeda americana ganha força globalmente, mesmo com...",
+        "resumo": "Desmonte de posições em dólar por conta do elevado...",
         "publicado_em_ts": 1747927601.0,
         "publicado_em_str": "22/05/2025 15:26",
         "fonte": "valor",
@@ -1835,96 +1865,6 @@
         "resumo": "Atuação da primeira-dama em viagens no exterior ca...",
         "publicado_em_ts": 1747923298.0,
         "publicado_em_str": "22/05/2025 14:14",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "Bolsas da Ásia terminam em queda em linha com Wall Street e balanços fracos",
-        "link": "https://valor.globo.com/financas/noticia/2025/05/22/bolsas-da-asia-terminam-em-queda-em-linha-com-wall-street-e-balancos-fracos.ghtml",
-        "resumo": "As bolsas da Ásia fecharam em queda nesta quinta-f...",
-        "publicado_em_ts": 1747923200.0,
-        "publicado_em_str": "22/05/2025 14:13",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 1
-    },
-    {
-        "titulo": "Lula indica ao Senado nome para chefiar ouvidoria da Antaq",
-        "link": "https://valor.globo.com/brasil/noticia/2025/05/22/lula-indica-ao-senado-nome-para-chefiar-ouvidoria-da-antaq.ghtml",
-        "resumo": "Se Renata Sousa Cordeiro for aprovada pela Casa, e...",
-        "publicado_em_ts": 1747923108.0,
-        "publicado_em_str": "22/05/2025 14:11",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "PMI composto preliminar da zona do euro cai para 49,5 em maio",
-        "link": "https://valor.globo.com/mundo/noticia/2025/05/22/pmi-composto-preliminar-da-zona-do-euro-cai-para-495-em-maio.ghtml",
-        "resumo": "Índice de gerente de compras composto preliminar d...",
-        "publicado_em_ts": 1747922980.0,
-        "publicado_em_str": "22/05/2025 14:09",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "Japão recua na meta de equilíbrio orçamentário apesar das preocupações fiscais",
-        "link": "https://valor.globo.com/mundo/noticia/2025/05/22/japo-recua-na-meta-de-equilbrio-oramentrio-apesar-das-preocupaes-fiscais.ghtml",
-        "resumo": "O Japão está adiando sua meta de longa data de ati...",
-        "publicado_em_ts": 1747922463.0,
-        "publicado_em_str": "22/05/2025 14:01",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "BRLA levanta R$ 12 milhões e muda nome para Avenia",
-        "link": "https://valor.globo.com/financas/criptomoedas/noticia/2025/05/22/brla-levanta-r-12-milhoes-e-muda-nome-para-avenia.ghtml",
-        "resumo": "Stablecoin atrelada ao real da startup continuará...",
-        "publicado_em_ts": 1747922438.0,
-        "publicado_em_str": "22/05/2025 14:00",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "Agenda do dia: Relatório bimestral no Brasil e PMI nos EUA são destaque",
-        "link": "https://valor.globo.com/financas/noticia/2025/05/22/agenda-do-dia-relatorio-bimestral-no-brasil-e-pmi-nos-eua-sao-destaque.ghtml",
-        "resumo": "A divulgação do Relatório Bimestral de Receitas e...",
-        "publicado_em_ts": 1747921994.0,
-        "publicado_em_str": "22/05/2025 13:53",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "Alta da Selic impulsiona novas soluções de crédito",
-        "link": "https://valor.globo.com/patrocinado/dino/noticia/2025/05/22/alta-da-selic-impulsiona-novas-solucoes-de-credito.ghtml",
-        "resumo": "Com a Selic elevada, o crédito se tornou mais caro...",
-        "publicado_em_ts": 1747920491.0,
-        "publicado_em_str": "22/05/2025 13:28",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 1
-    },
-    {
-        "titulo": "Como a tecnologia pode desbloquear valor nos negócios",
-        "link": "https://valor.globo.com/conteudo-de-marca/docusign/noticia/2025/05/22/como-a-tecnologia-pode-desbloquear-valor-nos-negocios.ghtml",
-        "resumo": "Evento Momentum 2025, promovido pela Docusign, tro...",
-        "publicado_em_ts": 1747920254.0,
-        "publicado_em_str": "22/05/2025 13:24",
-        "fonte": "valor",
-        "categoria": "economia",
-        "fator_tendencia": 0
-    },
-    {
-        "titulo": "Estudo revela dados sobre tributação de álcool nas Américas",
-        "link": "https://valor.globo.com/patrocinado/dino/noticia/2025/05/22/estudo-revela-dados-sobre-tributacao-de-alcool-nas-americas.ghtml",
-        "resumo": "Conforme divulgado no documento, os resultados são...",
-        "publicado_em_ts": 1747919105.0,
-        "publicado_em_str": "22/05/2025 13:05",
         "fonte": "valor",
         "categoria": "economia",
         "fator_tendencia": 0

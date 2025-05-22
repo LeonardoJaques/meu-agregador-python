@@ -75,5 +75,25 @@
         "fonte": "Tecnoblog",
         "categoria": "tecnologia",
         "relevancia": 0
+    },
+    {
+        "titulo": "How to send prompts in bulk with Spring AI and Java Virtual Threads",
+        "link": "https://foojay.io/today/how-to-send-prompts-in-bulk-with-spring-ai-and-java-virtual-threads/",
+        "resumo": "Table of Contents Here’s the flow:Virtual Threads for Massive ParallelismSpring AI Prompt CallProcessing in BatchesHandling Errors GracefullyProcess Results in BulkFull ImplementationStay curious! TL;DR: You&#8217;re building an AI-powered app that needs to send lots of prompts to OpenAI. Instead of...",
+        "publicado_em_ts": 1747829925.0,
+        "publicado_em_str": "21/05/2025 12:18",
+        "fonte": "Foojay Today | foojay blogs on OpenJDK and Java",
+        "categoria": "java",
+        "relevancia": 0
+    },
+    {
+        "titulo": "Google libera IA de graça para universitários do Brasil",
+        "link": "https://tecnoblog.net/noticias/google-libera-ia-de-graca-para-universitarios-do-brasil/",
+        "resumo": "Estudantes com e-mail acadêmico terão acesso gratuito por 15 meses ao plano mais completo de inteligência artificial do Google.\nGoogle libera IA de graça para universitários do Brasil",
+        "publicado_em_ts": 1747937442.0,
+        "publicado_em_str": "22/05/2025 18:10",
+        "fonte": "Tecnoblog",
+        "categoria": "tecnologia",
+        "relevancia": 1
     }
 ]
