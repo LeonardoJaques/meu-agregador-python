@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregador Curado - {{ categoria_ativa.capitalize() }}</title>
+    <style>
+        /* ... (estilos CSS existentes permanecem os mesmos) ... */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #e9ebee; color: #1d2129; }
+        .header { background-color: #4267b2; color: white; padding: 15px 20px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header h1 { margin: 0; font-size: 1.8em; }
+        .nav-tabs { display: flex; justify-content: center; background-color: #f0f2f5; padding: 10px 0; border-bottom: 1px solid #dddfe2; margin-bottom:20px;}
+        .nav-tabs a { padding: 10px 20px; text-decoration: none; color: #4b4f56; font-weight: bold; border-bottom: 3px solid transparent; }
+        .nav-tabs a.active, .nav-tabs a:hover { color: #4267b2; border-bottom-color: #4267b2; }
+        .actions-header-categoria { display: flex; justify-content: center; margin-bottom: 20px; }
+        .actions-header-categoria a { color: white; background-color: #365899; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-size: 0.9em; }
+        .actions-header-categoria a:hover { background-color: #29487d; }
+
+        .main-container { display: flex; flex-direction: column; padding: 0 20px 20px 20px; gap: 30px; }
+        .section-container { background-color: #fff; border: 1px solid #dddfe2; border-radius: 8px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .section-container h2 { font-size: 1.5em; color: #4267b2; margin-top: 0; border-bottom: 1px solid #dddfe2; padding-bottom: 10px; margin-bottom: 20px; }
+        .stats-info { text-align: center; margin-bottom: 15px; font-size: 0.9em; color: #606770; }
+        .noticia { border: 1px solid #e0e0e0; background-color: #f7f8fa; padding: 15px; margin-bottom: 15px; border-radius: 6px; }
+        .noticia h3 { margin-top: 0; font-size: 1.25em; margin-bottom: 8px; }
+        .noticia h3 a { text-decoration: none; color: #385898; }
+        .noticia h3 a:hover { text-decoration: underline; }
+        .noticia-tag { background-color: #e9ebee; color: #4b4f56; padding: 3px 8px; border-radius: 3px; font-size: 0.75em; font-weight: bold; margin-left: 8px;}
+        .noticia p { margin: 5px 0; line-height: 1.5; font-size: 0.9em; }
+        .meta-info { font-size: 0.8em; color: #606770; margin-bottom: 8px; }
+        .relevancia-info { font-size: 0.85em; color: #1c1e21; margin-bottom: 8px; font-weight: bold; }
+        .actions-noticia { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        .actions-noticia a {
+            text-decoration: none; padding: 6px 10px; border-radius: 4px; font-size: 0.85em;
+            transition: background-color 0.2s ease; border: 1px solid transparent; cursor: pointer;
+            display: inline-flex; align-items: center;
+        }
+        .btn-save { background-color: #67b53b; color: white; border-color: #5da035;}
+        .btn-save:hover { background-color: #5da035;}
+        .btn-relevance { border: 1px solid #ccc; background-color: #f5f6f7; color: #4b4f56; }
+        .btn-relevance:hover { background-color: #e9ebee; }
+        .btn-delete { background-color: #e74c3c; color: white; border-color: #c0392b; }
+        .btn-delete:hover { background-color: #c0392b; }
+        .icon { font-size: 1.1em; margin-right: 4px; }
+        .footer { text-align: center; margin-top: 20px; padding: 15px; font-size: 0.85em; color: #606770; border-top: 1px solid #dddfe2; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Agregador Curado</h1>
+    </div>
+
+    <nav class="nav-tabs">
+        {% for cat_nav in categorias_disponiveis %}
+            <a href="{{ url_for('pagina_inicial', categoria=cat_nav) }}" class="{{ 'active' if cat_nav == categoria_ativa else '' }}">
+                {{ cat_nav.capitalize() }}
+            </a>
+        {% endfor %}
+    </nav>
+    
+    <div class="actions-header-categoria">
+        <a href="{{ url_for('rota_refresh_feeds', categoria=categoria_ativa) }}">Atualizar Feeds de {{ categoria_ativa.capitalize() }}</a>
+    </div>
+
+    <div class="main-container">
+        <section class="section-container">
+            <h2>
+                Novas de {{ categoria_ativa.capitalize() }}
+                (Exibindo {{ noticias_feeds_recentes|length }} de {{ total_feeds_na_categoria }} encontradas)
+            </h2>
+            <div class="lista-cards-noticias-feeds"> {# Adicionando um container específico se necessário no futuro #}
+                {% if noticias_feeds_recentes %}
+                    {% for noticia in noticias_feeds_recentes %}
+                    <article class="noticia" id="feed-{{ noticia.link | replace('/', '-') | replace(':', '-') }}">
+                        <h3><a href="{{ noticia.link }}" target="_blank" rel="noopener noreferrer">{{ noticia.titulo }}</a></h3>
+                        <p class="meta-info">
+                            <strong>Fonte:</strong> {{ noticia.fonte }} <br>
+                            <strong>Publicado em:</strong> {{ noticia.publicado_em_str }}
+                        </p>
+                        <p>{{ noticia.resumo }}</p>
+                        <div class="actions-noticia">
+                            <a href="{{ url_for('rota_salvar_noticia', noticia_link=noticia.link) }}" class="btn-save">
+                                <span class="icon">💾</span> Salvar
+                            </a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                {% else %}
+                    <p>Nenhuma notícia nova coletada para {{ categoria_ativa.capitalize() }}. Clique em "Atualizar Feeds" para buscar.</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="section-container" id="secao-noticias-salvas">
+            <h2>
+                Minhas Notícias Salvas (Todas as Categorias)
+                (Exibindo {{ noticias_salvas|length }} de {{ total_salvas_armazenadas }} armazenadas)
+            </h2>
+            <div class="lista-cards-noticias-salvas">
+                {% if noticias_salvas %}
+                    {% for noticia in noticias_salvas %}
+                    <article class="noticia card-noticia-salva" 
+                             id="salva-{{ noticia.link | replace('/', '-') | replace(':', '-') }}"
+                             data-link="{{ noticia.link }}" 
+                             data-relevancia="{{ noticia.relevancia }}" 
+                             data-timestamp="{{ noticia.publicado_em_ts }}">
+                        <h3>
+                            <a href="{{ noticia.link }}" target="_blank" rel="noopener noreferrer">{{ noticia.titulo }}</a>
+                            {% if noticia.categoria %}
+                                <span class="noticia-tag">#{{ noticia.categoria }}</span> {# A tag ainda mostra a origem #}
+                            {% endif %}
+                        </h3>
+                        <p class="meta-info">
+                            <strong>Fonte:</strong> {{ noticia.fonte }} <br>
+                            <strong>Publicado em:</strong> {{ noticia.publicado_em_str }}
+                        </p>
+                        <p class="relevancia-info">
+                            Relevância: <span class="valor-relevancia">{{ noticia.relevancia }}</span>
+                        </p>
+                        <p>{{ noticia.resumo }}</p>
+                        <div class="actions-noticia">
+                            <a href="#" data-action="up" class="btn-relevance relevance-action" title="Aumentar Relevância"><span class="icon">⬆️</span></a>
+                            <a href="#" data-action="down" class="btn-relevance relevance-action" title="Diminuir Relevância"><span class="icon">⬇️</span></a>
+                            <a href="#" data-action="reset" class="btn-relevance relevance-action" title="Zerar Relevância"><span class="icon">🚫</span></a>
+                            <a href="{{ url_for('rota_excluir_noticia_salva', noticia_link=noticia.link) }}" class="btn-delete" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir esta notícia salva?');"><span class="icon">🗑️</span></a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                {% else %}
+                    <p>Nenhuma notícia salva ainda. Busque nos feeds e salve as que te interessam!</p>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>Página gerada em: {{ atualizado_em }}</p>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const relevanceActionButtons = document.querySelectorAll('.relevance-action');
+    const containerNoticiasSalvas = document.querySelector('.lista-cards-noticias-salvas'); // Seletor do container correto
+
+    function reordenarNoticiasSalvasVisualmente() {
+        if (!containerNoticiasSalvas) {
+            console.warn("Contêiner de notícias salvas '.lista-cards-noticias-salvas' não encontrado.");
+            return;
+        }
+
+        const noticiasArticles = Array.from(containerNoticiasSalvas.querySelectorAll('article.card-noticia-salva'));
+
+        noticiasArticles.sort(function(a, b) {
+            const relevanciaA = parseInt(a.dataset.relevancia, 10);
+            const timestampA = parseFloat(a.dataset.timestamp);
+            const relevanciaB = parseInt(b.dataset.relevancia, 10);
+            const timestampB = parseFloat(b.dataset.timestamp);
+
+            if (relevanciaA !== relevanciaB) {
+                return relevanciaB - relevanciaA;
+            }
+            return timestampB - timestampA;
+        });
+
+        noticiasArticles.forEach(article => {
+            containerNoticiasSalvas.appendChild(article);
+        });
+    }
+
+    relevanceActionButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            const cardArticle = this.closest('article.card-noticia-salva');
+            if (!cardArticle) return;
+
+            const noticiaLink = cardArticle.dataset.link;
+            const action = this.dataset.action;
+            let url = '';
+
+            if (action === 'up') url = `/rank_up_salva/${encodeURIComponent(noticiaLink)}`;
+            else if (action === 'down') url = `/rank_down_salva/${encodeURIComponent(noticiaLink)}`;
+            else if (action === 'reset') url = `/reset_relevance_salva/${encodeURIComponent(noticiaLink)}`;
+            else return;
+
+            fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    const relevanceSpan = cardArticle.querySelector('.valor-relevancia');
+                    if (relevanceSpan) relevanceSpan.textContent = data.nova_relevancia;
+                    cardArticle.dataset.relevancia = data.nova_relevancia;
+                    reordenarNoticiasSalvasVisualmente();
+                    console.log(`Relevância de ${data.link} atualizada para ${data.nova_relevancia}`);
+                } else {
+                    console.error('Erro ao atualizar relevância:', data.message);
+                    alert('Erro ao atualizar relevância: ' + (data.message || 'Erro desconhecido'));
+                }
+            })
+            .catch(error => {
+                console.error('Erro na requisição fetch:', error);
+                alert('Erro de comunicação ao atualizar relevância: ' + error.message);
+            });
+        });
+    });
+});
+</script>
+</body>
+</html>
