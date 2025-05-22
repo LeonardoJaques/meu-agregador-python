@@ -21,6 +21,10 @@ FEEDS_POR_CATEGORIA = {
     "java": [
         "https://www.baeldung.com/category/java/feed", "https://blogs.oracle.com/java/rss",
         "https://feed.infoq.com/java/news/",
+        "https://www.infoq.com/java/articles/feed/",
+        "https://www.oracle.com/technetwork/java/index.html",
+        "https://www.oracle.com/technetwork/java/javaee/overview/index.html",
+        "https://www.oracle.com/technetwork/java/javase/overview/index.html"
     ],
     "quadrinhos": [
         "http://feeds.feedburner.com/comicsbeat", "https://bleedingcool.com/comics/feed/",
